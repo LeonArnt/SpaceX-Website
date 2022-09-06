@@ -1,0 +1,25 @@
+.logo {
+  max-height: 40px;
+  padding: 0.5rem;
+}
+.mission-link {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: auto 20px;
+  float: right;
+  height: 100%;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 0.4rem;
+  margin-top: 5px;
+  transition: all 0.3s ease-in;
+}
+.mission-link:hover {
+  transform: all 0.3s ease-out;
+  background-color: white;
+  color: #242424;
+  font-weight: bold;
+}

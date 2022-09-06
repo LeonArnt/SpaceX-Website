@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import React from "react";
+import "./App.css";
+import { useMissions } from "./utils/useMissions";
+import HomePage from "./containers/HomePage/HomePage";
+import RocketDetailsPage from "./containers/RocketDetails/RocketDetailsPage";
+import { Link } from "react-router-dom";
 
 function App() {
+  const { data, loading } = useMissions();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={<HomePage data={data?.launchesPast} loading={loading} />}
+      />
+      <Route
+        path="/rocket/:id"
+        element={
+          <RocketDetailsPage details={data?.launchesPast} loading={loading} />
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <>
+            <div>ERROR 404</div>
+            <div>
+              Back to <Link to={"/"}>Home Page</Link>
+            </div>
+          </>
+        }
+      ></Route>
+    </Routes>
   );
 }
 

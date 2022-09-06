@@ -1,0 +1,24 @@
+.from {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+  display: flex;
+  align-items: flex-end;
+}
+.comment {
+  font-size: 14px;
+}
+.container {
+  margin: 13px 0;
+  background-color: #242424de;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.container:hover {
+  background-color: rgb(37, 37, 37);
+
+  transition: all 0.3s ease-out;
+}
